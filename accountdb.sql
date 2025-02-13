@@ -17,5 +17,5 @@ CREATE TABLE admins(
     password_hash TEXT NOT NULL,
     fname TEXT NOT NULL,
     lname TEXT NOT NULL,
-    company TEXT NOT NULL,
+    company TEXT NOT NULL
 );
