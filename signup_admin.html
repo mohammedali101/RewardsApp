@@ -5,8 +5,6 @@
     <link rel="stylesheet" type="text/css" href="styles.css"/>
   
     <script>
-        // Array of previously used passwords (this could be fetched from a database in a real scenario)
-        const previousPasswords = ['Password123!', 'oldPassword2020', 'Admin2023@'];
     
         // Password visibility toggle function
         function togglePassword() {
@@ -28,7 +26,7 @@
         function checkPasswordStrength() {
             var password = document.getElementById('password').value;
             var strengthText = document.getElementById('password_strength');
-            var strength = "Weak";
+            var strength = "Password is too weak, please try again";
             var valid = true;
     
             // Validate length and characters
@@ -37,16 +35,12 @@
             var lowerCaseValid = /[a-z]/.test(password);
             var numberValid = /[0-9]/.test(password);
             var specialValid = /[!@#$%^&*(),.?":{}|<>]/.test(password);
-            var notPreviousPassword = !previousPasswords.includes(password);
 
             if (!lengthValid) {
-                strength = "Weak (Password must be at least 8 characters long)";
+                strength = "ERROR! Password must be at least 8 characters long)";
                 valid = false;
             } else if (!upperCaseValid || !lowerCaseValid || !numberValid || !specialValid) {
-                strength = "Weak (Password must include at least one uppercase letter, one lowercase letter, one special character, and one number)";
-                valid = false;
-            } else if (!notPreviousPassword) {
-                strength = "Weak (This password has been used previously)";
+                strength = "ERROR! Password must include at least one uppercase letter, one lowercase letter, one special character, and one number)";
                 valid = false;
             } else {
                 strength = "Strong";  // If all conditions are met, the password is strong
