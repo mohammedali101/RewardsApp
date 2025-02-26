@@ -33,7 +33,9 @@ if (!empty($email) && !empty($password)) {
             // If password matches, store the ID in the session
         if($user_data['password_hash']=== $password){
             $_SESSION['user_id'] = $user_data['ID'];
-            header("Location: index_test.html");
+            $_SESSION['firstName'] = $user_data['fname'];
+            $_SESSION['lastName'] = $user_data['lname'];
+            header("Location: admin_index.php");
             exit;
         } else {
             header("Location: login_admin.html?error=Incorrect password");

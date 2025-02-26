@@ -1,6 +1,6 @@
 
 <?php
-//session_start();
+session_start();
 //include()
 //store user input
 $email= $_POST["email_address"];
