@@ -23,8 +23,9 @@ if ( !mysqli_select_db( $database, "db" ) )
                 if($user_data['password_hash']=== $password){
                     $_SESSION['user_id'] = $user_data['ID'];
                     $_SESSION['firstName'] = $user_data['fname'];
-                    $_SESSION['lastName'] = $user_data['lname']
-                    header("Location: index_test.html");
+                    $_SESSION['lastName'] = $user_data['lname'];
+                    $_SESSION['username'] = $email;
+                    header("Location: customer_index.php");
                     die;
                 }
             }
