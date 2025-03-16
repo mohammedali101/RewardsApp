@@ -28,6 +28,11 @@ if(!empty($email) && !empty($password))
 if ($database->query($query) === TRUE) {
     echo "New record created successfully";
 }
+if($_SESSION['admin']==='true'){
+    header("Location: admin_addUser.php");
+    exit;
+
+}
 header("Location: login_customer.html");
 exit;
 

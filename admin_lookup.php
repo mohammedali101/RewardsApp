@@ -1,11 +1,10 @@
 <?php
 session_start();
 $servername = "localhost";
-$db_username = "root";  // Change to your DB username
-$db_password = "root";  // Change to your DB password
-$dbname = "db";  // Change to your database name
+$db_username = "root";  
+$db_password = "root";  
+$dbname = "db";  
 
-// Establish connection
 $conn = new mysqli($servername, $db_username, $db_password, $dbname);
 
 // Check connection
@@ -62,8 +61,8 @@ $conn->close();
         <h3> Admin Options</h3>
         <ul>
             <li><a href="admin_index.php"> Account Home </a>  </li>
-            <li><a href="admin_view"> View All Accounts</a> </li>
-            <li><a href="admin_addUser"> Add a new User</a></li>
+            <li><a href="admin_view.php"> View All Accounts</a> </li>
+            <li><a href="admin_addUser.php"> Add a new User</a></li>
         </ul>
 
     </div>
@@ -84,6 +83,12 @@ $conn->close();
         <p><strong>Username:</strong> <?= htmlspecialchars($user_info["username"]) ?></p>
         <p><strong>Name:</strong> <?= "" . htmlspecialchars($user_info["fname"] . " " . htmlspecialchars($user_info["lname"])) ?></p>
         <p><strong>Balance:</strong> <?= htmlspecialchars($user_info["balance"]) ?></p>
+        <form action="adjustPoints.php" method="POST">
+            <label for="newBalance">New Balance:</label>
+            <input type="number" id="newBalance" name="newBalance" required>
+            <input name="user" type="hidden" value="<?= htmlspecialchars($user_info["username"]) ?>"/>
+            <button type="submit">Adjust Points</button>
+        </form>
     <?php elseif ($error): ?>
         <p style="color: red;"><?= $error ?></p>
     <?php endif; ?>

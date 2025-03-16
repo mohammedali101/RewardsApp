@@ -50,10 +50,28 @@
   .leftcol {   
     float: left;
     width: 25%;
+    margin-top: 25px;
   }
   .mainContent {   
     float: left;
     width: 75%;
     left: 35%;
+    margin-top: 25px;
+  }
+  .viewTable {
+    overflow: scroll;
+    height:300px;
+    width:565px;
+  }
+  table {
+    border: 1px solid white;
+    width:550px;
+  }
+  td{
+    font-weight: bold;
+    border: 1px solid white;
+    padding: 5px;
+    text-align: center;
+    
   }
 
