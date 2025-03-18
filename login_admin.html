@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Admin Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
     <link rel="stylesheet" type="text/css" href="styles.css"/>
 </head>
 <body>
     <form action="login_admin.php" method="POST">
-        <div id="container">
+        <div class="container">
+            <img src="logo.png" style="width: 300px; height: 200px;" alt="logo">
             <fieldset>
                 <legend>Login as in Admin</legend>
                 
                 Username: <input type="text" name="username" required><br>
                 Password: <input type="password" name="password" required><br>
-                <input type="submit" value="Login">
-                <a href="signup_admin.html">Sign Up</a>
+                
+                <a href="signup_customer.html" class="button">Login</a>
+                <a href="signup_customer.html" class="button">Sign Up</a>
             </fieldset>
         </div>
     </form>
