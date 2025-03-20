@@ -34,8 +34,9 @@ if ($conn->connect_error) {
         <h3> Admin Options</h3>
         <ul>
             <li><a href="admin_index.php"> Admin Home</a> </li>
-            <li><a href="admin_lookup.php"> Lookup </a>  </li>
+            <li><a href="admin_lookup.php"> Account Lookup </a>  </li>
             <li><a href="admin_addUser.php"> Add a new User</a></li>
+            <li><a href="admin_Delete.php"> Delete a User</a></li>
         </ul>
 
     </div>

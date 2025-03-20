@@ -49,21 +49,21 @@ $conn->close();
     <link rel="stylesheet" type="text/css" href="styles.css"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Account Lookup</title>
+    <title>Admin Account Deletion</title>
 </head>
 <body>
 <div class="header">
         <h1>SaveBig</h1>
-        <p>Account Lookup</p>
+        <p>Account Deletion</p>
 </div>
     <div class="leftcol">
         
         <h3> Admin Options</h3>
         <ul>
             <li><a href="admin_index.php"> Account Home </a>  </li>
+            <li><a href="admin_lookup.php"> Lookup </a>  </li>
             <li><a href="admin_view.php"> View All Accounts</a> </li>
             <li><a href="admin_addUser.php"> Add a new User</a></li>
-            <li><a href="admin_Delete.php"> Delete a User</a></li>
         </ul>
 
     </div>
@@ -84,11 +84,9 @@ $conn->close();
         <p><strong>Username:</strong> <?= htmlspecialchars($user_info["username"]) ?></p>
         <p><strong>Name:</strong> <?= "" . htmlspecialchars($user_info["fname"] . " " . htmlspecialchars($user_info["lname"])) ?></p>
         <p><strong>Balance:</strong> <?= htmlspecialchars($user_info["balance"]) ?></p>
-        <form action="adjustPoints.php" method="POST">
-            <label for="newBalance">New Balance:</label>
-            <input type="number" id="newBalance" name="newBalance" required>
+        <form action="deleteUser.php" method="POST">
             <input name="user" type="hidden" value="<?= htmlspecialchars($user_info["username"]) ?>"/>
-            <button type="submit">Adjust Points</button>
+            <button type="submit">Delete User</button>
         </form>
     <?php elseif ($error): ?>
         <p style="color: red;"><?= $error ?></p>

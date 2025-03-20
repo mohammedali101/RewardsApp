@@ -23,6 +23,7 @@ session_start();
             <li><a href="admin_lookup.php"> Account Lookup </a>  </li>
             <li><a href="admin_view.php"> View All Accounts</a> </li>
             <li><a href="admin_addUser.php"> Add a new User</a></li>
+            <li><a href="admin_Delete.php"> Delete a User</a></li>
         </ul>
 
     </div>
