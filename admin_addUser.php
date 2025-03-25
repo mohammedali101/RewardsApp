@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['admin']='true'
+$_SESSION['admin']='true';
 ?>
 <!DOCTYPE html>
 
@@ -24,6 +24,7 @@ $_SESSION['admin']='true'
             <li><a href="admin_index.php"> Account Home </a>  </li>
             <li><a href="admin_lookup.php"> Account Lookup </a>  </li>
             <li><a href="admin_view.php"> View All Accounts</a> </li>
+            <li><a href="admin_Delete.php"> Delete a User</a></li>
         </ul>
 
     </div>

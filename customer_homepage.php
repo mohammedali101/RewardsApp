@@ -18,6 +18,14 @@ if (!isset($_SESSION["username"])) {
     exit();
 }
 
+// Check if user wishes to logout
+if (isset($_POST['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: login_customer.php");
+    exit();
+}
+
 // Fetch customer details
 $username = $_SESSION["username"];
 $user_info = null;
@@ -70,6 +78,10 @@ $conn->close();
 
         <p>Navigate through the menu to manage your account, check rewards that you are eligible for, 
         and view exclusive offers that are available!</p>
+    
+        <form action="" method="POST">
+        <button type="submit" name="logout" class="logout-btn">Logout</button>
+        </form>
     </div>
 </body>
 </html>
