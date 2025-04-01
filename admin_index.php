@@ -13,20 +13,21 @@ session_start();
     <div class="container">
         <img src="logo.png" style="width: 500px; height: 300px;" alt="logo">
         
-        <fieldset>
-            <legend>Admin Options</legend>
-            
-                <li><a href="admin_lookup.php" class="button">Account Lookup</a></li>
-                <li><a href="admin_view.php" class="button">View All Accounts</a></li>
-                <li><a href="admin_addUser.php" class="button">Add a New User</a></li>
-            
-        </fieldset>
-        
-        <fieldset>
-            <legend>Welcome Message</legend>
-            <h2><?php echo "Welcome, " . $_SESSION["firstName"] . " " . $_SESSION["lastName"] . "";?></h2>
-            <p>This is the Administrator Homepage. You can access Administrator Actions from the options above.</p>
-        </fieldset>
+        <h3> Admin Options</h3>
+        <ul>
+            <li><a href="admin_lookup.php"> Account Lookup </a>  </li>
+            <li><a href="admin_view.php"> View All Accounts</a> </li>
+            <li><a href="admin_addUser.php"> Add a new User</a></li>
+            <li><a href="admin_Delete.php"> Delete a User</a></li>
+        </ul>
+
+    </div>
+
+    <div class="mainContent">
+        <h2><?php echo "Welcome, " . $_SESSION["firstName"] . " " . $_SESSION["lastName"] . "";?></h2>
+        <p>Welcome to SaveBig! Provide great rewards for your loyal customers and keep your business thriving!</p>
+        <p>As an Administrator, you can perform actions such as Viewing all Accounts, Lookup and Adjusting Points of a User, and more.</p>
+        <p>This the Administrator Homepage. You can access Administrator Actions from the links on the left.</p>
     </div>
 </body>
 </html>
