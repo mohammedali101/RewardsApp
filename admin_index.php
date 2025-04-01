@@ -2,21 +2,16 @@
 session_start();
 ?>
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Home</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
 </head>
 <body>
-    <div class="header">
-        <h1>SaveBig</h1>
-        <p>Admin Home</p>
-
-    </div>
-    <div class="leftcol">
+    <div class="container">
+        <img src="logo.png" style="width: 500px; height: 300px;" alt="logo">
         
         <h3> Admin Options</h3>
         <ul>
@@ -33,7 +28,6 @@ session_start();
         <p>Welcome to SaveBig! Provide great rewards for your loyal customers and keep your business thriving!</p>
         <p>As an Administrator, you can perform actions such as Viewing all Accounts, Lookup and Adjusting Points of a User, and more.</p>
         <p>This the Administrator Homepage. You can access Administrator Actions from the links on the left.</p>
-
     </div>
 </body>
 </html>
