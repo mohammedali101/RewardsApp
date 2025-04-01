@@ -20,3 +20,12 @@ CREATE TABLE admins(
     fname TEXT NOT NULL,
     lname TEXT NOT NULL
 );
+
+CREATE TABLE rewards(
+    ID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    product_name TEXT NOT NULL,
+    product_price int NOT NULL,
+    product_img LONGBLOB,
+    modifier float DEFAULT 0.00
+
+)
