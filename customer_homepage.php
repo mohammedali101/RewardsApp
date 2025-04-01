@@ -2,7 +2,7 @@
 session_start();
 $servername = "localhost";
 $db_username = "root";  // Change to your DB username
-$db_password = "root";  // Change to your DB password
+$db_password = "password";  // Change to your DB password
 $dbname = "db";  // Change to your database name
 
 $conn = new mysqli($servername, $db_username, $db_password, $dbname);
