@@ -3,7 +3,7 @@ session_start();
 $email= $_POST["email"];
 $password= $_POST["password"];
 
-if ( !( $database = mysqli_connect( "localhost:3306","root", "password") ) )
+if ( !( $database = mysqli_connect( "localhost:3306","root", "root") ) )
     die( "<p>Could not connect to database</p>" );
 if ( !mysqli_select_db( $database, "db" ) )
     {

@@ -9,14 +9,16 @@ $_SESSION['admin']='true';
     <link rel="stylesheet" type="text/css" href="styles.css"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Home</title>
+    <title>Add User</title>
 </head>
 <body>
     <div class="header">
+    <img src="logo.png" style="width: 500px; height: 150px;" alt="logo">
         <h1>SaveBig</h1>
         <p>Add User</p>
 
     </div>
+    <div class="box">
     <div class="leftcol">
         
         <h3> Admin Options</h3>
@@ -82,12 +84,8 @@ $_SESSION['admin']='true';
             return valid;
         }
     </script>    
-</head>
-<html>
 
-<title>Save Big</title>
 
-<body>
     <form action="signup_customer.php" method="POST">
         <div id="container">
             <fieldset>
@@ -119,6 +117,7 @@ $_SESSION['admin']='true';
         </div>
     </form>
 
+    </div>
     </div>
 </body>
 </html>

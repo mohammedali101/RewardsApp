@@ -53,6 +53,7 @@ $conn->close();
 </head>
 <body>
 <div class="header">
+        <img src="logo.png" style="width: 500px; height: 150px;" alt="logo">
         <h1>SaveBig</h1>
         <p>Account Lookup</p>
 </div>

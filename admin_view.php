@@ -25,10 +25,12 @@ if ($conn->connect_error) {
 </head>
 <body>
     <div class="header">
+    <img src="logo.png" style="width: 500px; height: 150px;" alt="logo">
         <h1>SaveBig</h1>
         <p>View Accounts</p>
 
     </div>
+    <div class="box">
     <div class="leftcol">
         
         <h3> Admin Options</h3>
@@ -71,6 +73,7 @@ if ($conn->connect_error) {
 
         </div>
 
+    </div>
     </div>
 </body>
 </html>
