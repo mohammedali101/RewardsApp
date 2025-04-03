@@ -13,7 +13,7 @@ $_SESSION['admin']='true';
 </head>
 <body>
     <div class="header">
-    <img src="logo.png" style="width: 500px; height: 150px;" alt="logo">
+        <img src="logo.png" style="width: 500px; height: 150px;" alt="logo">
         <h1>SaveBig</h1>
         <p>Add User</p>
 
@@ -27,6 +27,8 @@ $_SESSION['admin']='true';
             <li><a href="admin_lookup.php"> Account Lookup </a>  </li>
             <li><a href="admin_view.php"> View All Accounts</a> </li>
             <li><a href="admin_Delete.php"> Delete a User</a></li>
+            <li><a href="admin_addReward.php"> Add a Reward</a></li>
+            <li><a href="admin_viewRewards.php"> View Rewards</a></li>
         </ul>
 
     </div>

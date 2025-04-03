@@ -11,10 +11,10 @@
     font-family: "HelveticaNeue-Regular", Helvetica, sans-serif;
     line-height: 1.6;
     padding: 20px;
-    align-items: center;
+    align-items: start;
     height: 100vh; 
     display: flex;
-    justify-content: center; 
+    justify-content: flex-start; 
     margin: 0;
 
   }

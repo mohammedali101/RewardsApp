@@ -21,6 +21,7 @@ if ( !mysqli_select_db( $database, "db" ) )
 </head>
 <body>
     <div class="header">
+        <img src="logo.png" style="width: 500px; height: 150px;" alt="logo">
         <h1>SaveBig</h1>
         <p>Add Rewards</p>
 
@@ -33,6 +34,7 @@ if ( !mysqli_select_db( $database, "db" ) )
             <li><a href="admin_view.php"> View All Accounts</a> </li>
             <li><a href="admin_addUser.php"> Add a new User</a></li>
             <li><a href="admin_Delete.php"> Delete a User</a></li>
+            <li><a href="admin_viewRewards.php"> View Rewards</a></li>
         </ul>
 
     </div>
@@ -43,6 +45,7 @@ if ( !mysqli_select_db( $database, "db" ) )
             Reward Name <input type="text" name="rewardName" required><br><br>
             Reward Price <input type="number" name="rewardPrice" required><br><br>
             Reward Image <input type="file" name="rewardImage" required><br><br>
+            <input type="submit" value="Add">
             </div>
         </form>
 
