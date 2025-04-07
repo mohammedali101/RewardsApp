@@ -92,12 +92,18 @@ button.button {
 }
 
 .header{
-  position:fixed;
-  top:20px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* Centers the header horizontally */
   padding: 20px;
   text-align: center;
-  background: #965205;
-  height:200px;
+  background: #0D1B2A;
+  height: 200px;
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  justify-content: center; /* Centers content vertically */
+  align-items: center;
 
 }
 .header p{
@@ -113,11 +119,22 @@ button.button {
   width: 25%;
   margin-top: 25px;
 }
+
+.leftcol a {
+  color: #00A6FB; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-size: 18px; /* Font size for the links */
+}
+
+.leftcol a:hover {
+  color: #0086C7; /* Hover color */
+}
 .mainContent {   
-  flex:1;
+  flex: 1;
   width: 75%;
   left: 35%;
   margin-top: 25px;
+  margin-top: 220px; /* Ensures main content starts below the fixed header */
   overflow: auto;
 }
 .viewTable {
