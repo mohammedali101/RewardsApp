@@ -19,28 +19,39 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+$username = $_SESSION["username"];
+$user_info = null;
+
+$stmt = $conn->prepare("SELECT * FROM accounts WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $user_info = $result->fetch_assoc();
+} 
+
+$stmt->close();
+
 // Handle reward purchase
 if (isset($_POST['buyReward'])) {
     $reward_id = $_POST['reward_id'];
     $customer_id = $_SESSION['user_id'];
+    $price= $_POST['price'];
+    $customerBalance=$user_info['balance'];
 
-    $purchase_sql = "INSERT INTO purchases (customer_id, reward_id) VALUES (?, ?)";
-    
-    // Prepare statement
-    if ($stmt = $conn->prepare($purchase_sql)) {
-        $stmt->bind_param("ii", $customer_id, $reward_id);
-        
-        // Execute the statement
-        if ($stmt->execute()) {
-            echo "<script>alert('Purchase has been successful!');</script>";
-        } else {
-            echo "<script>alert('ERROR: " . $stmt->error . "');</script>";
+    if($customerBalance > $price){
+        $newBal = $customerBalance - $price;
+        $sql= "UPDATE accounts SET balance='$newBal' WHERE ID='$customer_id'";
+        if ($conn->query($sql) === TRUE) {
+            echo "<script>alert('Yay! You purchased a reward!');</script>";
+           
         }
-        
-        // Close the prepared statement
-        $stmt->close();
-    } else {
-        echo "<script>alert('ERROR!');</script>";
+
+    }
+   
+    else {
+        echo "<script>alert('You do not have enough points for this purchase!');</script>";
     }
 }
 
@@ -95,19 +106,23 @@ $result = $conn->query($sql);
                         <td><img src="<?php echo htmlspecialchars($row['product_img']); ?>" alt="Stored Image" style="width:100px;height:auto;"></td>
                         <td>
                             <form method="post" action="">
-                                <input type="hidden" name="reward_id" value="<?php echo $row['ID']; ?>">
+                                <input type="hidden" name="price" value="<?=$row['product_price']; ?>">
+                                <input type="hidden" name="reward_id" value="<?=$row['ID']; ?>">
                                 <!-- Buy button below allows customer to purchase a reward -->
                                 <button type="submit" name="buyReward">Buy</button> 
                             </form>
                         </td>
                     </tr>
+
                 <?php
+
                     }
                 } else {
                     echo "<tr><td colspan='5'>Sorry! There are no rewards available at this time. Please try again later.</td></tr>";
                 }
                 ?>
             </table>
+            <p>Your current balance: <strong>$<?= htmlspecialchars($user_info["balance"]) ?></strong></p>
         </div>
     </div>
     <?php 
