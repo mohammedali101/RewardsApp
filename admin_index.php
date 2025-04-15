@@ -12,7 +12,7 @@ session_start();
 
 <body>
 <div class= header>
-    <img src="logo.png" style="width: 500px; height: 150px;" alt="logo">
+    <img src="logo.png" style="width: 500px; height: 300px;" alt="logo">
     <h1>SaveBig</h1>
     <p>Admin Index</p>
     </div>
