@@ -12,6 +12,7 @@ session_start();
 </head>
 <body>
     <div class="header">
+        <img src="logo.png" style="width: 500px; height: 300px;" alt="logo">
         <h1>SaveBig</h1>
         <p>Customer Home</p>
 
