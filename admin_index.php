@@ -1,6 +1,41 @@
 <?php
 session_start();
+$servername = "localhost";
+$db_username = "root";  
+$db_password = "root";  
+$dbname = "db";  
+
+$conn = new mysqli($servername, $db_username, $db_password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Handle logout
+if (isset($_POST['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: login_admin.php");
+    exit();
+}
+
+// Fetch admin details
+$username = $_SESSION["username"];
+$user_info = null;
+$stmt = $conn->prepare("SELECT * FROM admins WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $user_info = $result->fetch_assoc();
+}
+
+$stmt->close();
+$conn->close(); 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
