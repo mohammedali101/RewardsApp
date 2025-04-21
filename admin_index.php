@@ -72,7 +72,11 @@ $conn->close();
             <p>Welcome to SaveBig! Provide great rewards for your loyal customers and keep your business thriving!</p>
             <p>As an Administrator, you can perform actions such as Viewing all Accounts, Lookup and Adjusting Points of a User, and more.</p>
             <p>This the Administrator Homepage. You can access Administrator Actions from the links on the left.</p>
+            <form action="" method="POST">
+        <button type="submit" name="logout" class="logout-btn">Logout</button>
+        </form>
         </div>
+        
     
 </body>
 </html>
