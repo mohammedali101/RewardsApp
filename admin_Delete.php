@@ -57,6 +57,9 @@ $conn->close();
         <h1>SaveBig</h1>
         <p>Account Deletion</p>
 </div>
+    <!-- Navigate -->
+    <?php include("admin_navigate.php"); ?> 
+<!-- 
     <div class="leftcol">
         
         <h3> Admin Options</h3>
@@ -69,7 +72,7 @@ $conn->close();
             <li><a href="admin_viewRewards.php"> View Rewards</a></li>
         </ul>
 
-    </div>
+    </div> -->
 
     <div class="mainContent">
     <!-- Search Form -->

@@ -1,6 +1,41 @@
 <?php
 session_start();
+$servername = "localhost";
+$db_username = "root";  
+$db_password = "root";  
+$dbname = "db";  
+
+$conn = new mysqli($servername, $db_username, $db_password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Handle logout
+if (isset($_POST['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: login_admin.php");
+    exit();
+}
+
+// Fetch admin details
+$username = $_SESSION["username"];
+$user_info = null;
+$stmt = $conn->prepare("SELECT * FROM admins WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $user_info = $result->fetch_assoc();
+}
+
+$stmt->close();
+$conn->close(); 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +51,11 @@ session_start();
     <h1>SaveBig</h1>
     <p>Admin Index</p>
     </div>
-    
+
+<!-- Navigate to admin pages -->
+<?php include("admin_navigate.php"); ?>
+    <!-- 
         <div class="leftcol">
-        
-        
             <h3> Admin Options</h3>
             <ul>
                 <li><a href="admin_lookup.php"> Account Lookup </a>  </li>
@@ -29,8 +65,7 @@ session_start();
                 <li><a href="admin_addReward.php"> Add a Reward</a></li>
                 <li><a href="admin_viewRewards.php"> View Rewards</a></li>
             </ul>
-
-        </div>
+        </div> -->
 
         <div class="mainContent">
             <h2><?php echo "Welcome, " . $_SESSION["firstName"] . " " . $_SESSION["lastName"] . "";?></h2>

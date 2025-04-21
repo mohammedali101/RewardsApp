@@ -1,9 +1,26 @@
 <?php
 session_start();
+
+// Check if user is logged in, if not, redirect to login page
+if (!isset($_SESSION["username"])) {
+    header("Location: login_customer.php");
+    exit();
+}
+
+// Handle logout
+if (isset($_POST['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: login_customer.php");
+    exit();
+}
+
+// Read customer details
+$username = $_SESSION["username"];
 $servername = "localhost";
-$db_username = "root";  // Change to your DB username
-$db_password = "root";  // Change to your DB password
-$dbname = "db";  // Change to your database name
+$db_username = "root";  
+$db_password = "root";  
+$dbname = "db";  
 
 $conn = new mysqli($servername, $db_username, $db_password, $dbname);
 
@@ -12,32 +29,15 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Check if user is logged in, if not take back to login page
-if (!isset($_SESSION["username"])) {
-    header("Location: login_customer.php");
-    exit();
-}
-
-// Check if user wishes to logout
-if (isset($_POST['logout'])) {
-    session_unset();
-    session_destroy();
-    header("Location: login_customer.php");
-    exit();
-}
-
-// Fetch customer details
-$username = $_SESSION["username"];
-$user_info = null;
-
 $stmt = $conn->prepare("SELECT * FROM accounts WHERE username = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
+$user_info = null;
 
 if ($result->num_rows > 0) {
     $user_info = $result->fetch_assoc();
-} 
+}
 
 $stmt->close();
 $conn->close(); 

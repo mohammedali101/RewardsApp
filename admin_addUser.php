@@ -19,8 +19,10 @@ $_SESSION['admin']='true';
 
     </div>
     <div class="box">
-    <div class="leftcol">
-        
+    <!-- Navigate -->
+    <?php include("admin_navigate.php"); ?> 
+    <!-- 
+    <div class="leftcol">  
         <h3> Admin Options</h3>
         <ul>
             <li><a href="admin_index.php"> Account Home </a>  </li>
@@ -30,8 +32,7 @@ $_SESSION['admin']='true';
             <li><a href="admin_addReward.php"> Add a Reward</a></li>
             <li><a href="admin_viewRewards.php"> View Rewards</a></li>
         </ul>
-
-    </div>
+    </div> -->
 
     <div class="mainContent">
     <script>
