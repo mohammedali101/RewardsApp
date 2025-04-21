@@ -70,6 +70,7 @@ $result = $conn->query($sql);
 </head>
 <body>
     <div class="header">
+    <img src="logo.png" style="width: 500px; height: 300px;" alt="logo">
         <h1>SaveBig</h1>
         <p>View rewards that are currently available for your account!</p>
     </div>

@@ -11,7 +11,7 @@ if (!isset($_SESSION["username"])) {
 if (isset($_POST['logout'])) {
     session_unset();
     session_destroy();
-    header("Location: login_customer.php");
+    header("Location: Welcome_page.html");
     exit();
 }
 
@@ -53,19 +53,14 @@ $conn->close();
 </head>
 <body>
     <div class="header">
+    <img src="logo.png" style="width: 500px; height: 300px;" alt="logo">
         <h1>SaveBig</h1>
         <p>Customer Home</p>
     </div>
 
-    <div class="leftcol">
-        <h3>Options</h3>
-        <ul>
-            <li><a href="customer_homepage.php">Homepage</a></li>
-            <li><a href="available_rewards.php">Available Rewards</a></li>
-            <li><a href="view_offers.php">View Offers</a></li>
-            <li><a href="customer_profile.php">My Profile</a></li>
-        </ul>
-    </div>
+    
+    <?php include("customer_navigate.php"); ?>
+    
 
     <div class="mainContent">
         <?php if ($user_info): ?>

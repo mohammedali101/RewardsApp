@@ -16,14 +16,14 @@ if ($conn->connect_error) {
 if (isset($_POST['logout'])) {
     session_unset();
     session_destroy();
-    header("Location: login_admin.php");
+    header("Location: Welcome_page.html");
     exit();
 }
 
 // Fetch admin details
-$username = $_SESSION["username"];
+$username = $_SESSION["user_id"];
 $user_info = null;
-$stmt = $conn->prepare("SELECT * FROM admins WHERE username = ?");
+$stmt = $conn->prepare("SELECT * FROM admins WHERE ID = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
