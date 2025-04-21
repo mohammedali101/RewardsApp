@@ -57,8 +57,12 @@ $conn->close();
         <h1>SaveBig</h1>
         <p>Account Lookup</p>
 </div>
-    <div class="leftcol">
-        
+
+<!-- Navigate to admin pages -->
+<?php include("admin_navigate.php"); ?>
+
+<!-- 
+    <div class="leftcol"> 
         <h3> Admin Options</h3>
         <ul>
             <li><a href="admin_index.php"> Account Home </a>  </li>
@@ -66,8 +70,7 @@ $conn->close();
             <li><a href="admin_addUser.php"> Add a new User</a></li>
             <li><a href="admin_Delete.php"> Delete a User</a></li>
         </ul>
-
-    </div>
+    </div> -->
 
     <div class="mainContent">
     <!-- Search Form -->

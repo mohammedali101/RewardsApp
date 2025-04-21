@@ -16,10 +16,11 @@ session_start();
     <h1>SaveBig</h1>
     <p>Admin Index</p>
     </div>
-    
+
+<!-- Navigate to admin pages -->
+<?php include("admin_navigate.php"); ?>
+    <!-- 
         <div class="leftcol">
-        
-        
             <h3> Admin Options</h3>
             <ul>
                 <li><a href="admin_lookup.php"> Account Lookup </a>  </li>
@@ -29,8 +30,7 @@ session_start();
                 <li><a href="admin_addReward.php"> Add a Reward</a></li>
                 <li><a href="admin_viewRewards.php"> View Rewards</a></li>
             </ul>
-
-        </div>
+        </div> -->
 
         <div class="mainContent">
             <h2><?php echo "Welcome, " . $_SESSION["firstName"] . " " . $_SESSION["lastName"] . "";?></h2>
