@@ -16,6 +16,9 @@ session_start();
         <h1>SaveBig</h1>
         <p>View offers that are available</p>
     </div>
+        <!-- Include the navigation menu for customers -->
+        <?php include("customer_navigate.php"); ?>
+        <!-- 
     <div class="leftcol">
         <h3>Options</h3>
         <ul>
@@ -23,7 +26,7 @@ session_start();
             <li><a href="available_rewards.php">Available Rewards</a></li>
             <li><a href="view_offers.php">View Offers</a></li>
         </ul>
-    </div>
+    </div> -->
     <div class="mainContent">
         <h2>View Offers</h2>
         <?php
