@@ -63,12 +63,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         // Prepare the SQL query to insert the new user
-        $query = "INSERT INTO accounts (first_name, last_name, username, password_hash) 
+        $query = "INSERT INTO admins (fname, lname, username, password_hash) 
                   VALUES ('$first_name', '$last_name', '$email_address', '$hashed_password')";
 
         // Execute query
         if ($database->query($query) === TRUE) {
             echo "<p>New record created successfully</p>";
+            header("Location: login_admin.html");
+            exit;
+
         } else {
             echo "<p>Error: " . $database->error . "</p>";
         }
